@@ -1,0 +1,13 @@
+[project]
+name = "graphathon-code-snippets"
+version = "0.1.0"
+description = "A set of code snippets to help you get started with Neo4j."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-cloud-bigquery>=3.36.0",
+    "ipykernel>=6.30.1",
+    "neo4j>=5.28.2",
+    "pandas>=2.3.2",
+    "yfiles-jupyter-graphs-for-neo4j>=1.7.0",
+]
