@@ -9,3 +9,12 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+# Neo4j data and runtime files
+neo4j/data/
+neo4j/logs/
+neo4j/import/
+neo4j/plugins/
+
+# Optional: keep the conf directory in version control but ignore specific files
+# neo4j/conf/

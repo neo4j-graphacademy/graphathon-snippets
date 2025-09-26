@@ -19,10 +19,31 @@ These examples are designed to be generic starting points that you can adapt for
 ## Prerequisites
 
 - Python 3.13+
-- Neo4j database (local or cloud)
+- Neo4j database (local, cloud, or Docker)
 - Google Cloud access (for BigQuery examples)
+- Docker and Docker Compose (for local Neo4j setup)
 
 ## Environment Setup
+
+### Option 1: Docker Setup (Recommended)
+
+The easiest way to get started is using Docker Compose to run Neo4j Enterprise with APOC and Graph Data Science plugins:
+
+```bash
+# Start Neo4j Enterprise with all plugins
+docker-compose up -d
+
+# Access Neo4j Browser at http://localhost:7474
+# Default credentials: neo4j/password123
+```
+
+The Docker setup includes:
+- Neo4j 5.15 Enterprise Edition
+- APOC plugin for extended procedures
+- Graph Data Science (GDS) plugin
+- Persistent data volumes
+
+### Option 2: Manual Setup
 
 Create a `.env` file in the root directory with the following variables:
 
@@ -30,7 +51,7 @@ Create a `.env` file in the root directory with the following variables:
 # Neo4j Database Connection
 NEO4J_URI=bolt://localhost:7687
 NEO4J_USER=neo4j
-NEO4J_PASSWORD=your_password
+NEO4J_PASSWORD=password123
 
 # For Neo4j AuraDB (cloud), use the connection string provided
 # NEO4J_URI=neo4j+s://xxxxxx.databases.neo4j.io
@@ -78,17 +99,31 @@ This project includes several powerful tools for working with Neo4j:
 
 ## Getting Started
 
-1. Set up your `.env` file with the required credentials
-2. Install dependencies with `uv sync`
-3. Start Jupyter Lab with `jupyter lab`
+### Quick Start with Docker
+
+1. Start Neo4j with Docker: `docker-compose up -d`
+2. Install Python dependencies: `uv sync`
+3. Start Jupyter Lab: `jupyter lab`
 4. Open and run the example notebooks
 5. Adapt the patterns for your Graphathon project
+
+### Manual Setup
+
+1. Set up your `.env` file with the required credentials
+2. Install dependencies with `uv sync`
+3. Start your Neo4j instance
+4. Start Jupyter Lab with `jupyter lab`
+5. Open and run the example notebooks
+6. Adapt the patterns for your Graphathon project
 
 ## Troubleshooting
 
 - **Neo4j Connection Error**: Verify your Neo4j instance is running and credentials in `.env` are correct
+  - For Docker: Check with `docker-compose ps` and `docker-compose logs neo4j`
 - **BigQuery Authentication Error**: Check your Google Cloud credentials and project settings
 - **Missing Dependencies**: Run `uv sync` to ensure all packages are installed
+- **Docker Issues**: Ensure Docker is running and you have enough memory allocated (at least 4GB recommended)
+- **Plugin Issues**: APOC and GDS plugins are automatically installed in the Docker setup
 
 ## For Graphathon Participants
 
