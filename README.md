@@ -34,11 +34,11 @@ The easiest way to get started is using Docker Compose to run Neo4j Enterprise w
 docker-compose up -d
 
 # Access Neo4j Browser at http://localhost:7474
-# Default credentials: neo4j/password123
+# Default credentials: neo4j/neoneoneo
 ```
 
 The Docker setup includes:
-- Neo4j 5.15 Enterprise Edition
+- Neo4j Enterprise Edition
 - APOC plugin for extended procedures
 - Graph Data Science (GDS) plugin
 - Persistent data volumes
