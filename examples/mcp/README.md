@@ -65,6 +65,6 @@ To use the mcp tools with the VSCode Agent.
     python examples/mcp/server/main.py
     ```
 
-2. Start the server in the `.vscode/mcp.json` configuration
+2. Start the server in the `.vscode/mcp.json` configuration.
 
-3. Open a new Agent by running command `Chat: Open Chat (Agent)`
+3. Open a new Agent by running command `Chat: Open Chat (Agent)`.
