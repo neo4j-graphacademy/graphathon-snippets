@@ -242,10 +242,11 @@ async def catch_all_query_movie_database(query: str, ctx: Context) -> dict:
     driver = ctx.request_context.lifespan_context.driver
     database = ctx.request_context.lifespan_context.database
 
-    # Create Cypher LLM 
-    t2c_llm = OpenAILLM(
-        model_name="gpt-4o", 
-        model_params={"temperature": 0}
+    t2c_llm=OpenAILLM(
+        model_name="gpt-5-mini",
+        model_params={
+            "reasoning_effort": "high"
+        }
     )
 
     # Specify your own Neo4j schema
